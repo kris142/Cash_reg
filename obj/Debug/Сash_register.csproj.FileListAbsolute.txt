@@ -1,0 +1,39 @@
+C:\Users\krist\OneDrive\Рабочий стол\Сash_register\bin\Debug\Сash_register.exe.config
+C:\Users\krist\OneDrive\Рабочий стол\Сash_register\bin\Debug\Сash_register.exe
+C:\Users\krist\OneDrive\Рабочий стол\Сash_register\bin\Debug\Сash_register.pdb
+C:\Users\krist\OneDrive\Рабочий стол\Сash_register\obj\Debug\Сash_register.csproj.AssemblyReference.cache
+C:\Users\krist\OneDrive\Рабочий стол\Сash_register\obj\Debug\Сash_register.csproj.SuggestedBindingRedirects.cache
+C:\Users\krist\OneDrive\Рабочий стол\Сash_register\obj\Debug\Сash_register.Сash_register.resources
+C:\Users\krist\OneDrive\Рабочий стол\Сash_register\obj\Debug\Сash_register.Properties.Resources.resources
+C:\Users\krist\OneDrive\Рабочий стол\Сash_register\obj\Debug\Сash_register.csproj.GenerateResource.cache
+C:\Users\krist\OneDrive\Рабочий стол\Сash_register\obj\Debug\Сash_register.csproj.CoreCompileInputs.cache
+C:\Users\krist\OneDrive\Рабочий стол\Сash_register\obj\Debug\Сash_register.exe
+C:\Users\krist\OneDrive\Рабочий стол\Сash_register\obj\Debug\Сash_register.pdb
+C:\workspace\Studies\3 Курс\Сash_register\bin\Debug\Сash_register.exe.config
+C:\workspace\Studies\3 Курс\Сash_register\bin\Debug\Сash_register.exe
+C:\workspace\Studies\3 Курс\Сash_register\bin\Debug\Сash_register.pdb
+C:\workspace\Studies\3 Курс\Сash_register\obj\Debug\Сash_register.csproj.AssemblyReference.cache
+C:\workspace\Studies\3 Курс\Сash_register\obj\Debug\Сash_register.Properties.Resources.resources
+C:\workspace\Studies\3 Курс\Сash_register\obj\Debug\Сash_register.csproj.GenerateResource.cache
+C:\workspace\Studies\3 Курс\Сash_register\obj\Debug\Сash_register.csproj.CoreCompileInputs.cache
+C:\workspace\Studies\3 Курс\Сash_register\obj\Debug\Сash_register.exe
+C:\workspace\Studies\3 Курс\Сash_register\obj\Debug\Сash_register.pdb
+C:\workspace\Studies\3 Курс\Сash_register\obj\Debug\Сash_register.Log.resources
+C:\workspace\Studies\3 Курс\Сash_register\obj\Debug\Сash_register.Reg.resources
+C:\workspace\Studies\3 Курс\Сash_register\obj\Debug\Сash_register.home.resources
+C:\workspace\Studies\3 Курс\Курсач Голиков\Сash_register\bin\Debug\Сash_register.exe.config
+C:\workspace\Studies\3 Курс\Курсач Голиков\Сash_register\bin\Debug\Сash_register.exe
+C:\workspace\Studies\3 Курс\Курсач Голиков\Сash_register\bin\Debug\Сash_register.pdb
+C:\workspace\Studies\3 Курс\Курсач Голиков\Сash_register\obj\Debug\Сash_register.csproj.AssemblyReference.cache
+C:\workspace\Studies\3 Курс\Курсач Голиков\Сash_register\obj\Debug\Сash_register.home.resources
+C:\workspace\Studies\3 Курс\Курсач Голиков\Сash_register\obj\Debug\Сash_register.Log.resources
+C:\workspace\Studies\3 Курс\Курсач Голиков\Сash_register\obj\Debug\Сash_register.Reg.resources
+C:\workspace\Studies\3 Курс\Курсач Голиков\Сash_register\obj\Debug\Сash_register.Properties.Resources.resources
+C:\workspace\Studies\3 Курс\Курсач Голиков\Сash_register\obj\Debug\Сash_register.csproj.GenerateResource.cache
+C:\workspace\Studies\3 Курс\Курсач Голиков\Сash_register\obj\Debug\Сash_register.csproj.CoreCompileInputs.cache
+C:\workspace\Studies\3 Курс\Курсач Голиков\Сash_register\obj\Debug\Сash_register.exe
+C:\workspace\Studies\3 Курс\Курсач Голиков\Сash_register\obj\Debug\Сash_register.pdb
+C:\workspace\Studies\3 Курс\Курсач Голиков\Сash_register\obj\Debug\Сash_register.AddElement.resources
+C:\workspace\Studies\3 Курс\Курсач Голиков\Сash_register\obj\Debug\Сash_register.menu.resources
+C:\workspace\Studies\3 Курс\Сash_register\obj\Debug\Сash_register.AddElement.resources
+C:\workspace\Studies\3 Курс\Сash_register\obj\Debug\Сash_register.menu.resources
