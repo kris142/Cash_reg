@@ -1,18 +1,7 @@
-﻿using Microsoft.VisualBasic;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
+﻿using System;
 using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Сash_register
 {
@@ -45,7 +34,7 @@ namespace Сash_register
         private void add_dish(object sender, EventArgs e)
         {
             AddElement addElement = new AddElement();
-            Hide();
+            Close();
             addElement.ShowDialog();
         }
 
@@ -88,6 +77,8 @@ namespace Сash_register
         }
         private void home_Load(object sender, EventArgs e)
         {
+            string[] products = CashRegister.name_get();
+            product_list.Items.AddRange(products);
             label2.Text = Acc.name;
             if (Acc.access == "admin")
             {
@@ -110,12 +101,6 @@ namespace Сash_register
                 to_shopping_basket.Enabled = false;
                 Menu_bas.Enabled = false;
             }
-            foreach (string product in CashRegister.name_get())
-            {
-                this.product_list.Items.Add(product);
-            }
-
-
         }
 
         private void product_list_SelectedIndexChanged(object sender, EventArgs e)
@@ -174,13 +159,10 @@ namespace Сash_register
                     this.shopping_basket.Items.Add(item);
                     File.AppendAllText("C:\\app\\logi.txt", $"В {currentTime} {Acc.name} добавил {CashRegister.name_get()[index]} - {quantity} шт" + Environment.NewLine);
                 }
-
                 int currentSum = int.Parse(this.sum.Text);
                 this.sum.Text = (currentSum + int.Parse(this.quantity1.Text) * int.Parse(this.price.Text)).ToString();
                 quantity1.Value = 1;
             }
-
-
         }
 
         private void shopping_basket_SelectedIndexChanged(object sender, EventArgs e)
@@ -239,10 +221,6 @@ namespace Сash_register
                     MessageBox.Show("Выберите элемент в корзине для удаления.");
                 }
             }
-
-
-
-
         }
 
         private void export_button_Click(object sender, EventArgs e)

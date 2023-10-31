@@ -40,7 +40,6 @@
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeselected = new System.Windows.Forms.Button();
             this.export_button = new System.Windows.Forms.Button();
-            this.cartlabel = new System.Windows.Forms.Label();
             this.to_shopping_basket = new System.Windows.Forms.Button();
             this.price = new System.Windows.Forms.Label();
             this.name = new System.Windows.Forms.Label();
@@ -172,17 +171,6 @@
             this.export_button.Text = "Экспортировать итог в txt";
             this.export_button.UseVisualStyleBackColor = true;
             this.export_button.Click += new System.EventHandler(this.export_button_Click);
-            // 
-            // cartlabel
-            // 
-            this.cartlabel.AutoSize = true;
-            this.cartlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cartlabel.ForeColor = System.Drawing.Color.White;
-            this.cartlabel.Location = new System.Drawing.Point(6, 5);
-            this.cartlabel.Name = "cartlabel";
-            this.cartlabel.Size = new System.Drawing.Size(77, 16);
-            this.cartlabel.TabIndex = 39;
-            this.cartlabel.Text = "В корзине:";
             // 
             // to_shopping_basket
             // 
@@ -342,7 +330,6 @@
             this.tabPage2.Controls.Add(this.shopping_basket);
             this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Controls.Add(this.cartlabel);
             this.tabPage2.Controls.Add(this.removeselected);
             this.tabPage2.Controls.Add(this.sum);
             this.tabPage2.Controls.Add(this.export_button);
@@ -488,7 +475,6 @@
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
         private System.Windows.Forms.Button removeselected;
         private System.Windows.Forms.Button export_button;
-        private System.Windows.Forms.Label cartlabel;
         private System.Windows.Forms.Button to_shopping_basket;
         private System.Windows.Forms.Label price;
         private System.Windows.Forms.Label name;
