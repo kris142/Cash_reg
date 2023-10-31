@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -35,39 +36,46 @@ namespace Сash_register
         }
         public static void addElem(string name, string description, string price, string weight)
         {
-            string filePath = @"C:\app\data\";
+            string path = @"C:\app\data\";
             string[] fileNames = { "name.txt", "description.txt", "price.txt", "weight.txt" };
-            List<List<string>> data = new List<List<string>>();
-            for (int i = 0; i < fileNames.Length; i++)
-            {
-                string dataFilePath = Path.Combine(filePath, fileNames[i]);
-                using (StreamWriter writer = File.AppendText(dataFilePath))
-                {
-                    writer.WriteLine(i == 0 ? name : i == 1 ? description : i == 2 ? price : weight);
-                }
-            }
-            for (int i = 0; i < fileNames.Length; i++)
-            {
-                string dataFilePath = Path.Combine(filePath, fileNames[i]);
-                List<string> dataList = new List<string>();
-
-                using (StreamReader reader = File.OpenText(dataFilePath))
-                {
-                    string line;
-                    while ((line = reader.ReadLine()) != null)
-                    {
-                        dataList.Add(line);
-                    }
-                }
-                data.Add(dataList);
-            }/*
-            List<string> names = data[0];
-            List<string> descriptions = data[1];
-            List<string> prices = data[2];
-            List<string> weights = data[3];*/
-
+            File.AppendAllText(path + "name.txt", name + "\n");
+            File.AppendAllText(path + "description.txt", description + "\n");
+            File.AppendAllText(path + "price.txt", price + "\n");
+            File.AppendAllText(path + "weight.txt", weight + "\n");
+            CashRegister.name = File.ReadAllLines(path + "name.txt");
+            CashRegister.description = File.ReadAllLines(path + "description.txt");
+            CashRegister.price = File.ReadAllLines(path + "price.txt");
+            CashRegister.weight = File.ReadAllLines(path + "weight.txt");
         }
+        public static void removeElement(string name)
+        {
+            string path = @"C:\app\data\";
 
+            int num = CashRegister.name.ToList().IndexOf(name);
+
+            List<string> nameList = new List<string>(CashRegister.name);
+            List<string> descriptionList = new List<string>(CashRegister.description);
+            List<string> priceList = new List<string>(CashRegister.price);
+            List<string> weightList = new List<string>(CashRegister.weight);
+
+            if (num >= 0)
+            {
+                nameList.RemoveAt(num);
+                descriptionList.RemoveAt(num);
+                priceList.RemoveAt(num);
+                weightList.RemoveAt(num);
+
+                CashRegister.name = nameList.ToArray();
+                CashRegister.description = descriptionList.ToArray();
+                CashRegister.price = priceList.ToArray();
+                CashRegister.weight = weightList.ToArray();
+
+                File.WriteAllLines(path + "name.txt", CashRegister.name);
+                File.WriteAllLines(path + "description.txt", CashRegister.description);
+                File.WriteAllLines(path + "price.txt", CashRegister.price);
+                File.WriteAllLines(path + "weight.txt", CashRegister.weight);
+            }
+        }
 
         private static ArrayList shopping_basket = new ArrayList();
         public static void shopping_basket_add(int quantity)

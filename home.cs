@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -7,9 +8,12 @@ namespace Сash_register
 {
     public partial class home : Form
     {
+        private List<string> products = new List<string>();
+
         public home()
         {
             InitializeComponent();
+            Load += new EventHandler(Loadh);
         }
 
         private void сброситьАвторизациюToolStripMenuItem_Click(object sender, EventArgs e)
@@ -34,12 +38,14 @@ namespace Сash_register
         private void add_dish(object sender, EventArgs e)
         {
             AddElement addElement = new AddElement();
-            Close();
+            this.Close();
+            this.Dispose();
             addElement.ShowDialog();
         }
 
         private void menuStrip_MouseMove(object sender, MouseEventArgs e)
         {
+
             label2.Text = Acc.name;
             if (Acc.access == "admin")
             {
@@ -77,41 +83,20 @@ namespace Сash_register
         }
         private void home_Load(object sender, EventArgs e)
         {
-            string[] products = CashRegister.name_get();
-            product_list.Items.AddRange(products);
-            label2.Text = Acc.name;
-            if (Acc.access == "admin")
-            {
-                adddish.Enabled = true;
-                Register.Enabled = true;
-                to_shopping_basket.Enabled = true;
-                Menu_bas.Enabled = true;
-            }
-            else if (Acc.access == "cashier")
-            {
-                adddish.Enabled = false;
-                Register.Enabled = false;
-                to_shopping_basket.Enabled = true;
-                Menu_bas.Enabled = true;
-            }
-            else if (Acc.access == "none")
-            {
-                adddish.Enabled = false;
-                Register.Enabled = false;
-                to_shopping_basket.Enabled = false;
-                Menu_bas.Enabled = false;
-            }
+            
         }
 
         private void product_list_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (product_list.SelectedItem != null)
+            string selectedProduct = this.product_list.SelectedItem.ToString();
+            int index = product_list.SelectedIndices[0];
+
+            if (index >= 0)
             {
-                int index = CashRegister.name_get().ToList().IndexOf(this.product_list.SelectedItem.ToString());
-                this.name.Text = this.product_list.SelectedItem.ToString();
+                this.name.Text = selectedProduct;
                 this.price.Text = CashRegister.price_get()[index];
+                quantity1.Value = 1;
             }
-            { }
         }
 
         private void to_shopping_basket_Click(object sender, EventArgs e)
@@ -140,19 +125,14 @@ namespace Сash_register
                     item.SubItems[2].Text = newQuantity.ToString();
                     item.SubItems[3].Text = newAmount.ToString();
                     File.AppendAllText("C:\\app\\logi.txt", $"В {currentTime} {Acc.name} добавил {CashRegister.name_get()[index]} - {quantity} шт" + Environment.NewLine);
-
-
                 }
                 else
                 {
                     int quantity = int.Parse(this.quantity1.Text);
                     int pricing = int.Parse(this.price.Text);
-
                     int amount = quantity * pricing;
-
                     CashRegister.shopping_basket_add(quantity);
                     CashRegister.sum_add(amount);
-
                     string[] itemText = { CashRegister.name_get()[index], pricing.ToString(), quantity.ToString(), amount.ToString() };
                     ListViewItem item = new ListViewItem(itemText);
                     item.Name = CashRegister.name_get()[index];
@@ -202,7 +182,6 @@ namespace Сash_register
                             int currentSum = int.Parse(this.sum.Text);
                             this.sum.Text = (currentSum - pricing).ToString();
                             File.AppendAllText("C:\\app\\logi.txt", $"В {currentTime} {Acc.name} удалил из корзины {CashRegister.name_get()[index]} - {quantity} шт" + Environment.NewLine);
-
                         }
                         else
                         {
@@ -248,6 +227,39 @@ namespace Сash_register
             CashRegister.shopping_basket_clear();
             shopping_basket.Items.Clear();
             sum.Text = "0";
+        }
+        private void Loadh(object sender, EventArgs e)
+        {
+            products.AddRange(product_list.Items.Cast<string>());
+            string[] newProducts = CashRegister.name_get();
+            products.AddRange(newProducts);
+            label2.Text = Acc.name;
+            if (Acc.access == "admin")
+            {
+                adddish.Enabled = true;
+                Register.Enabled = true;
+                to_shopping_basket.Enabled = true;
+                Menu_bas.Enabled = true;
+            }
+            else if (Acc.access == "cashier")
+            {
+                adddish.Enabled = false;
+                Register.Enabled = false;
+                to_shopping_basket.Enabled = true;
+                Menu_bas.Enabled = true;
+            }
+            else if (Acc.access == "none")
+            {
+                adddish.Enabled = false;
+                Register.Enabled = false;
+                to_shopping_basket.Enabled = false;
+                Menu_bas.Enabled = false;
+            }
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            product_list.Items.Clear();
+            product_list.Items.AddRange(products.ToArray());
         }
     }
 }

@@ -65,6 +65,7 @@
             this.user_name = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
             this.Menu_bas.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -99,14 +100,14 @@
             // менюToolStripMenuItem
             // 
             this.менюToolStripMenuItem.Name = "менюToolStripMenuItem";
-            this.менюToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.менюToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.менюToolStripMenuItem.Text = "Меню";
             this.менюToolStripMenuItem.Click += new System.EventHandler(this.менюToolStripMenuItem_Click);
             // 
             // adddish
             // 
             this.adddish.Name = "adddish";
-            this.adddish.Size = new System.Drawing.Size(166, 22);
+            this.adddish.Size = new System.Drawing.Size(180, 22);
             this.adddish.Text = "Добавить блюдо";
             this.adddish.Click += new System.EventHandler(this.add_dish);
             // 
@@ -292,6 +293,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Transparent;
+            this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.quantity1);
             this.tabPage1.Controls.Add(this.product_list);
             this.tabPage1.Controls.Add(this.to_shopping_basket);
@@ -428,6 +430,16 @@
             this.label3.TabIndex = 49;
             this.label3.Text = "Здравствуйте,";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(66, 468);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 47;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -447,7 +459,6 @@
             this.Name = "home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Касса столовой";
-            this.Load += new System.EventHandler(this.home_Load);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.menuStrip_MouseMove);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
@@ -500,5 +511,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.Button button2;
     }
 }

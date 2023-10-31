@@ -53,36 +53,9 @@ namespace Сash_register
 
         private void button_remove_Click(object sender, EventArgs e)
         {
-            DateTime currentTime = DateTime.Now;
-            if (ItemsList.SelectedItems.Count > 0)
-            {
-                ListViewItem selectedItem = ItemsList.SelectedItems[0];
-                string name = @"C:\app\data\name.txt";
-                string description = @"C:\app\data\description.txt";
-                string price = @"C:\app\data\price.txt";
-                string weight = @"C:\app\data\weight.txt";
-                int index = selectedItem.Index;
-                string nameSel = selectedItem.Text;
-                List<string> nameList = File.ReadAllLines(name).ToList();
-                List<string> descriptionList = File.ReadAllLines(description).ToList();
-                List<string> priceList = File.ReadAllLines(price).ToList();
-                List<string> weightList = File.ReadAllLines(weight).ToList();
-                if (index >= 0 && index < nameList.Count)
-                {
-                    nameList.RemoveAt(index);
-                    descriptionList.RemoveAt(index);
-                    priceList.RemoveAt(index);
-                    weightList.RemoveAt(index);
-                    File.WriteAllLines(name, nameList);
-                    File.WriteAllLines(description, descriptionList);
-                    File.WriteAllLines(price, priceList);
-                    File.WriteAllLines(weight, weightList);
-                }
-                File.AppendAllText("C:\\app\\logi.txt", $"В {currentTime} {Acc.name} удалил {nameSel}" + Environment.NewLine);
-
-                ItemsList.Items.Remove(selectedItem);
-            }
-
+            string selectedText = this.ItemsList.SelectedItems[0].Text;
+            CashRegister.removeElement(selectedText);
+            this.ItemsList.Items.Remove(this.ItemsList.SelectedItems[0]);
         }
         private void textbox_KeyPress(object sender, KeyPressEventArgs e)
         {
