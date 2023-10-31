@@ -98,6 +98,7 @@
             this.nametextbox.Name = "nametextbox";
             this.nametextbox.Size = new System.Drawing.Size(100, 20);
             this.nametextbox.TabIndex = 13;
+            this.nametextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nametextbox_KeyPress);
             // 
             // button_add
             // 
@@ -171,6 +172,7 @@
             // weightbox
             // 
             this.weightbox.Location = new System.Drawing.Point(560, 186);
+            this.weightbox.MaxLength = 10;
             this.weightbox.Name = "weightbox";
             this.weightbox.Size = new System.Drawing.Size(100, 20);
             this.weightbox.TabIndex = 24;
@@ -195,6 +197,7 @@
             this.descriptextbox.Name = "descriptextbox";
             this.descriptextbox.Size = new System.Drawing.Size(100, 20);
             this.descriptextbox.TabIndex = 14;
+            this.descriptextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nametextbox_KeyPress);
             // 
             // AddElement
             // 

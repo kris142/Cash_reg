@@ -63,6 +63,7 @@
             this.MaximumSize = new System.Drawing.Size(301, 368);
             this.MinimumSize = new System.Drawing.Size(301, 368);
             this.Name = "Welcome";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Welcome";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -63,7 +63,7 @@ namespace Сash_register
     || (l >= '0' && l <= '9')
     || l == 'ё'
     || l == 'Ё'
-    || l == '\b')) { e.Handled = true; } 
+    || l == '\b')) { e.Handled = true; }
         }
 
         private void user_name_TextChanged(object sender, EventArgs e)

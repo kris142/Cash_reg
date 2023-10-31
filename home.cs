@@ -216,6 +216,9 @@ namespace Сash_register
                     }
 
                     streamWriter.WriteLine("Итого " + sum.Text);
+                    CashRegister.shopping_basket_clear();
+                    shopping_basket.Items.Clear();
+                    sum.Text = "0";
                 }
             }
             File.AppendAllText("C:\\app\\logi.txt", $"В {currentTime} {Acc.name} сделал экспорт" + Environment.NewLine);

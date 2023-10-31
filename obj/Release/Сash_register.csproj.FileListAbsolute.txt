@@ -41,3 +41,17 @@ C:\Users\krist\OneDrive\Рабочий стол\Вуысещз\1\Сash_register\
 C:\Users\krist\OneDrive\Рабочий стол\Вуысещз\1\Сash_register\Cash_reg\obj\Release\Сash_register.exe
 C:\Users\krist\OneDrive\Рабочий стол\Вуысещз\1\Сash_register\Cash_reg\obj\Release\Сash_register.pdb
 C:\Users\krist\OneDrive\Рабочий стол\Вуысещз\1\Сash_register\Cash_reg\obj\Release\Сash_register.Welcome.resources
+C:\Users\krist\OneDrive\Рабочий стол\1\Сash_register\Cash_reg\bin\Release\Сash_register.exe
+C:\Users\krist\OneDrive\Рабочий стол\1\Сash_register\Cash_reg\bin\Release\Сash_register.pdb
+C:\Users\krist\OneDrive\Рабочий стол\1\Сash_register\Cash_reg\obj\Release\Сash_register.csproj.AssemblyReference.cache
+C:\Users\krist\OneDrive\Рабочий стол\1\Сash_register\Cash_reg\obj\Release\Сash_register.AddElement.resources
+C:\Users\krist\OneDrive\Рабочий стол\1\Сash_register\Cash_reg\obj\Release\Сash_register.home.resources
+C:\Users\krist\OneDrive\Рабочий стол\1\Сash_register\Cash_reg\obj\Release\Сash_register.Log.resources
+C:\Users\krist\OneDrive\Рабочий стол\1\Сash_register\Cash_reg\obj\Release\Сash_register.menu.resources
+C:\Users\krist\OneDrive\Рабочий стол\1\Сash_register\Cash_reg\obj\Release\Сash_register.Reg.resources
+C:\Users\krist\OneDrive\Рабочий стол\1\Сash_register\Cash_reg\obj\Release\Сash_register.Properties.Resources.resources
+C:\Users\krist\OneDrive\Рабочий стол\1\Сash_register\Cash_reg\obj\Release\Сash_register.Welcome.resources
+C:\Users\krist\OneDrive\Рабочий стол\1\Сash_register\Cash_reg\obj\Release\Сash_register.csproj.GenerateResource.cache
+C:\Users\krist\OneDrive\Рабочий стол\1\Сash_register\Cash_reg\obj\Release\Сash_register.csproj.CoreCompileInputs.cache
+C:\Users\krist\OneDrive\Рабочий стол\1\Сash_register\Cash_reg\obj\Release\Сash_register.exe
+C:\Users\krist\OneDrive\Рабочий стол\1\Сash_register\Cash_reg\obj\Release\Сash_register.pdb

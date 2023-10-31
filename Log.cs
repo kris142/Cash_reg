@@ -25,37 +25,48 @@ namespace Сash_register
             string[] password = File.ReadAllLines(@"C:\app\pass.txt");
             string[] user_name = File.ReadAllLines(@"C:\app\user_name.txt");
             DateTime currentTime = DateTime.Now;
+
             if (login_.Text.Length < 2 || password_.Text.Length < 2)
             {
                 MessageBox.Show("Текстовые поля меньше двух символов");
             }
             else
             {
-                for (int i = 0; i < login.Length; i++)
-                {
-                    if (login_.Text == "admin" && password_.Text == "admin")
-                    {
-                        Acc.access = "admin";
-                        Acc.name = "admin";
-                        MessageBox.Show("Добро пожаловать уважаемый Админ");
-                        this.Close();
-                        break;
-                    }
-                    else if (login_.Text == login[i] & password_.Text == password[i])
-                    {
-                        Acc.access = "cashier";
-                        Acc.name = user_name[i];
-                        label3.Text = "";
-                        MessageBox.Show("Добро пожаловать");
-                        this.Close();
-                        break;
-                    }
-                    else
-                    {
-                        label3.Text = "Неверные данные";
-                    }
-                    File.AppendAllText("C:\\app\\logi.txt", $"В {currentTime} {Acc.name} вошел в систему" + Environment.NewLine);
+                bool loggedIn = false;
 
+                if (login_.Text == "admin" && password_.Text == "admin")
+                {
+                    Acc.access = "admin";
+                    Acc.name = "admin";
+                    MessageBox.Show("Добро пожаловать уважаемый Админ");
+                    this.Close();
+                    loggedIn = true;
+                }
+                else
+                {
+                    for (int i = 0; i < login.Length; i++)
+                    {
+                        if (login_.Text == login[i] && password_.Text == password[i])
+                        {
+                            Acc.access = "cashier";
+                            Acc.name = user_name[i];
+                            label3.Text = "";
+                            MessageBox.Show("Добро пожаловать");
+                            this.Close();
+                            loggedIn = true;
+                            break;
+                        }
+                    }
+                }
+
+                if (!loggedIn)
+                {
+                    label3.Text = "Неверные данные";
+                }
+
+                if (loggedIn)
+                {
+                    File.AppendAllText(@"C:\app\logi.txt", $"В {currentTime} {Acc.name} вошел в систему" + Environment.NewLine);
                 }
             }
         }

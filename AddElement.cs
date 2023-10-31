@@ -33,15 +33,24 @@ namespace Сash_register
         }
         private void button_add_Click(object sender, EventArgs e)
         {
-            DateTime currentTime = DateTime.Now;
-            ListViewItem listViewItem = new ListViewItem(this.nametextbox.Text);
-            listViewItem.SubItems.Add(this.descriptextbox.Text);
-            listViewItem.SubItems.Add(this.weightbox.Text);
-            listViewItem.SubItems.Add(this.pricebox.Text);
-            this.ItemsList.Items.Add(listViewItem);
-            CashRegister.addElem(this.nametextbox.Text, this.descriptextbox.Text, this.weightbox.Text, this.pricebox.Text);
-            File.AppendAllText("C:\\app\\logi.txt", $"В {currentTime} {Acc.name} добавил {this.nametextbox.Text}" + Environment.NewLine);
-            descriptextbox.Text = weightbox.Text = pricebox.Text = nametextbox.Text = "";
+            string[] arr = File.ReadAllLines(@"C:\app\data\name.txt");
+            if (descriptextbox.Text != "" && weightbox.Text != "" && pricebox.Text != "" && nametextbox.Text != "" && !arr.Contains(this.nametextbox.Text))
+            {
+                DateTime currentTime = DateTime.Now;
+                ListViewItem listViewItem = new ListViewItem(this.nametextbox.Text);
+                listViewItem.SubItems.Add(this.descriptextbox.Text);
+                listViewItem.SubItems.Add(this.weightbox.Text);
+                listViewItem.SubItems.Add(this.pricebox.Text);
+                this.ItemsList.Items.Add(listViewItem);
+                CashRegister.addElem(this.nametextbox.Text, this.descriptextbox.Text, this.weightbox.Text, this.pricebox.Text);
+                File.AppendAllText("C:\\app\\logi.txt", $"В {currentTime} {Acc.name} добавил {this.nametextbox.Text}" + Environment.NewLine);
+                descriptextbox.Text = weightbox.Text = pricebox.Text = nametextbox.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Не все поля заполнены/ или элемент уже есть");
+            }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -60,6 +69,11 @@ namespace Сash_register
         private void textbox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void nametextbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }
