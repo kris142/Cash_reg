@@ -53,6 +53,7 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.Menu_bas = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
             this.quantity1 = new System.Windows.Forms.NumericUpDown();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.shopping_basket = new System.Windows.Forms.ListView();
@@ -65,7 +66,6 @@
             this.user_name = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
             this.Menu_bas.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -100,14 +100,14 @@
             // менюToolStripMenuItem
             // 
             this.менюToolStripMenuItem.Name = "менюToolStripMenuItem";
-            this.менюToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.менюToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.менюToolStripMenuItem.Text = "Меню";
             this.менюToolStripMenuItem.Click += new System.EventHandler(this.менюToolStripMenuItem_Click);
             // 
             // adddish
             // 
             this.adddish.Name = "adddish";
-            this.adddish.Size = new System.Drawing.Size(180, 22);
+            this.adddish.Size = new System.Drawing.Size(166, 22);
             this.adddish.Text = "Добавить блюдо";
             this.adddish.Click += new System.EventHandler(this.add_dish);
             // 
@@ -309,6 +309,16 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Меню";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(66, 468);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(101, 25);
+            this.button2.TabIndex = 47;
+            this.button2.Text = "Обновить";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // quantity1
             // 
             this.quantity1.Location = new System.Drawing.Point(395, 493);
@@ -429,16 +439,6 @@
             this.label3.Size = new System.Drawing.Size(110, 20);
             this.label3.TabIndex = 49;
             this.label3.Text = "Здравствуйте,";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(66, 468);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 47;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // home
             // 

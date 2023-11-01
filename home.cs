@@ -24,6 +24,7 @@ namespace Сash_register
         private void ent_acc(object sender, EventArgs e)
         {
             Log log = new Log();
+            Close();
             log.Show();
         }
 
@@ -45,7 +46,6 @@ namespace Сash_register
 
         private void menuStrip_MouseMove(object sender, MouseEventArgs e)
         {
-
             label2.Text = Acc.name;
             if (Acc.access == "admin")
             {
@@ -68,6 +68,7 @@ namespace Сash_register
                 to_shopping_basket.Enabled = false;
                 Menu_bas.Enabled = false;
             }
+
         }
 
         private void Register_Click(object sender, EventArgs e)
@@ -80,10 +81,6 @@ namespace Сash_register
         {
             menu menu = new menu();
             menu.ShowDialog();
-        }
-        private void home_Load(object sender, EventArgs e)
-        {
-            
         }
 
         private void product_list_SelectedIndexChanged(object sender, EventArgs e)
@@ -206,22 +203,27 @@ namespace Сash_register
         {
             DateTime currentTime = DateTime.Now;
             saveFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            if (shopping_basket.Items.Count > 0)
             {
-                using (StreamWriter streamWriter = new StreamWriter(saveFileDialog1.FileName))
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    foreach (object obj in shopping_basket.Items)
-                    {
-                        streamWriter.WriteLine(obj.ToString());
-                    }
 
-                    streamWriter.WriteLine("Итого " + sum.Text);
-                    CashRegister.shopping_basket_clear();
-                    shopping_basket.Items.Clear();
-                    sum.Text = "0";
+                    using (StreamWriter streamWriter = new StreamWriter(saveFileDialog1.FileName))
+                    {
+                        foreach (object obj in shopping_basket.Items)
+                        {
+                            streamWriter.WriteLine(obj.ToString());
+                        }
+
+                        streamWriter.WriteLine("Итого " + sum.Text);
+                        CashRegister.shopping_basket_clear();
+                        shopping_basket.Items.Clear();
+                        sum.Text = "0";
+                        File.AppendAllText("C:\\app\\logi.txt", $"В {currentTime} {Acc.name} сделал экспорт" + Environment.NewLine);
+                    }
                 }
+                else { }
             }
-            File.AppendAllText("C:\\app\\logi.txt", $"В {currentTime} {Acc.name} сделал экспорт" + Environment.NewLine);
 
         }
 

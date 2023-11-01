@@ -34,17 +34,17 @@ namespace Сash_register
         private void button_add_Click(object sender, EventArgs e)
         {
             string[] arr = File.ReadAllLines(@"C:\app\data\name.txt");
-            if (descriptextbox.Text != "" && weightbox.Text != "" && pricebox.Text != "" && nametextbox.Text != "" && !arr.Contains(this.nametextbox.Text))
+            if (descriptext.Text != "" && weight.Text != "" && price.Text != "" && namebox.Text != "" && !arr.Contains(this.namebox.Text))
             {
                 DateTime currentTime = DateTime.Now;
-                ListViewItem listViewItem = new ListViewItem(this.nametextbox.Text);
-                listViewItem.SubItems.Add(this.descriptextbox.Text);
-                listViewItem.SubItems.Add(this.weightbox.Text);
-                listViewItem.SubItems.Add(this.pricebox.Text);
+                ListViewItem listViewItem = new ListViewItem(this.namebox.Text);
+                listViewItem.SubItems.Add(this.descriptext.Text);
+                listViewItem.SubItems.Add(this.weight.Text);
+                listViewItem.SubItems.Add(this.price.Text);
                 this.ItemsList.Items.Add(listViewItem);
-                CashRegister.addElem(this.nametextbox.Text, this.descriptextbox.Text, this.weightbox.Text, this.pricebox.Text);
-                File.AppendAllText("C:\\app\\logi.txt", $"В {currentTime} {Acc.name} добавил {this.nametextbox.Text}" + Environment.NewLine);
-                descriptextbox.Text = weightbox.Text = pricebox.Text = nametextbox.Text = "";
+                CashRegister.addElem(this.namebox.Text, this.descriptext.Text, this.weight.Text, this.price.Text);
+                File.AppendAllText("C:\\app\\logi.txt", $"В {currentTime} {Acc.name} добавил {this.namebox.Text}" + Environment.NewLine);
+                descriptext.Text = weight.Text = price.Text = namebox.Text = "";
             }
             else
             {

@@ -35,16 +35,16 @@
             this.weightf = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button_remove = new System.Windows.Forms.Button();
-            this.nametextbox = new System.Windows.Forms.TextBox();
+            this.namebox = new System.Windows.Forms.TextBox();
             this.button_add = new System.Windows.Forms.Button();
-            this.pricebox = new System.Windows.Forms.TextBox();
+            this.price = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.weightbox = new System.Windows.Forms.TextBox();
+            this.weight = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.descriptextbox = new System.Windows.Forms.TextBox();
+            this.descriptext = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // ItemsList
@@ -94,11 +94,11 @@
             // 
             // nametextbox
             // 
-            this.nametextbox.Location = new System.Drawing.Point(557, 48);
-            this.nametextbox.Name = "nametextbox";
-            this.nametextbox.Size = new System.Drawing.Size(100, 20);
-            this.nametextbox.TabIndex = 13;
-            this.nametextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nametextbox_KeyPress);
+            this.namebox.Location = new System.Drawing.Point(557, 48);
+            this.namebox.Name = "nametextbox";
+            this.namebox.Size = new System.Drawing.Size(100, 20);
+            this.namebox.TabIndex = 13;
+            this.namebox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nametextbox_KeyPress);
             // 
             // button_add
             // 
@@ -115,12 +115,12 @@
             // 
             // pricebox
             // 
-            this.pricebox.Location = new System.Drawing.Point(560, 138);
-            this.pricebox.MaxLength = 10;
-            this.pricebox.Name = "pricebox";
-            this.pricebox.Size = new System.Drawing.Size(100, 20);
-            this.pricebox.TabIndex = 15;
-            this.pricebox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_KeyPress);
+            this.price.Location = new System.Drawing.Point(560, 138);
+            this.price.MaxLength = 10;
+            this.price.Name = "pricebox";
+            this.price.Size = new System.Drawing.Size(100, 20);
+            this.price.TabIndex = 15;
+            this.price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_KeyPress);
             // 
             // label2
             // 
@@ -171,12 +171,12 @@
             // 
             // weightbox
             // 
-            this.weightbox.Location = new System.Drawing.Point(560, 186);
-            this.weightbox.MaxLength = 10;
-            this.weightbox.Name = "weightbox";
-            this.weightbox.Size = new System.Drawing.Size(100, 20);
-            this.weightbox.TabIndex = 24;
-            this.weightbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_KeyPress);
+            this.weight.Location = new System.Drawing.Point(560, 186);
+            this.weight.MaxLength = 10;
+            this.weight.Name = "weightbox";
+            this.weight.Size = new System.Drawing.Size(100, 20);
+            this.weight.TabIndex = 24;
+            this.weight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_KeyPress);
             // 
             // label1
             // 
@@ -192,12 +192,12 @@
             // 
             // descriptextbox
             // 
-            this.descriptextbox.Location = new System.Drawing.Point(558, 91);
-            this.descriptextbox.Multiline = true;
-            this.descriptextbox.Name = "descriptextbox";
-            this.descriptextbox.Size = new System.Drawing.Size(100, 20);
-            this.descriptextbox.TabIndex = 14;
-            this.descriptextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nametextbox_KeyPress);
+            this.descriptext.Location = new System.Drawing.Point(558, 91);
+            this.descriptext.Multiline = true;
+            this.descriptext.Name = "descriptextbox";
+            this.descriptext.Size = new System.Drawing.Size(100, 20);
+            this.descriptext.TabIndex = 14;
+            this.descriptext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nametextbox_KeyPress);
             // 
             // AddElement
             // 
@@ -207,12 +207,12 @@
             this.BackgroundImage = global::Сash_register.Properties.Resources.rm222batch5_mind_12;
             this.ClientSize = new System.Drawing.Size(800, 466);
             this.ControlBox = false;
-            this.Controls.Add(this.weightbox);
+            this.Controls.Add(this.weight);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.descriptextbox);
-            this.Controls.Add(this.nametextbox);
-            this.Controls.Add(this.pricebox);
+            this.Controls.Add(this.descriptext);
+            this.Controls.Add(this.namebox);
+            this.Controls.Add(this.price);
             this.Controls.Add(this.button_remove);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button_add);
@@ -237,17 +237,17 @@
         public System.Windows.Forms.ColumnHeader name;
         public System.Windows.Forms.ColumnHeader des;
         private System.Windows.Forms.Button button_remove;
-        private System.Windows.Forms.TextBox nametextbox;
+        private System.Windows.Forms.TextBox namebox;
         private System.Windows.Forms.Button button_add;
-        private System.Windows.Forms.TextBox pricebox;
+        private System.Windows.Forms.TextBox price;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox weightbox;
+        private System.Windows.Forms.TextBox weight;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ColumnHeader weightf;
         private System.Windows.Forms.ColumnHeader pr;
-        private System.Windows.Forms.TextBox descriptextbox;
+        private System.Windows.Forms.TextBox descriptext;
     }
 }
