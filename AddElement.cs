@@ -73,7 +73,8 @@ namespace Сash_register
 
         private void nametextbox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar);
+            char text = e.KeyChar;
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar) || text == '-');
         }
     }
 }
