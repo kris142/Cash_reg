@@ -38,7 +38,7 @@ namespace Сash_register
         }
         private void add_dish(object sender, EventArgs e)
         {
-            AddElement addElement = new AddElement();
+            AddDish addElement = new AddDish();
             this.Close();
             this.Dispose();
             addElement.ShowDialog();

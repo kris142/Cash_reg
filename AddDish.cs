@@ -12,13 +12,13 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Сash_register
 {
-    public partial class AddElement : Form
+    public partial class AddDish : Form
     {
-        public AddElement()
+        public AddDish()
         {
             InitializeComponent();
         }
-        private void AddElement_Load(object sender, EventArgs e)
+        private void AddDish_Load(object sender, EventArgs e)
         {
             for (int i = 0; i < CashRegister.price_get().Length; i++)
             {
@@ -48,33 +48,32 @@ namespace Сash_register
             }
             else
             {
-                MessageBox.Show("Не все поля заполнены/ или элемент уже есть");
+                MessageBox.Show("Не все поля заполнены / или элемент уже есть");
             }
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void back_Click(object sender, EventArgs e)
         {
             home home = new home();
             home.Show();
             Close();
         }
 
-        private void button_remove_Click(object sender, EventArgs e)
+        private void AddDish_remove_Click(object sender, EventArgs e)
         {
             string selectedText = this.ItemsList.SelectedItems[0].Text;
-            CashRegister.removeElement(selectedText);
+            CashRegister.removeDish(selectedText);
             this.ItemsList.Items.Remove(this.ItemsList.SelectedItems[0]);
         }
-        private void textbox_KeyPress(object sender, KeyPressEventArgs e)
+        private void Num_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
-        private void nametextbox_KeyPress(object sender, KeyPressEventArgs e)
+        private void Text_KeyPress(object sender, KeyPressEventArgs e)
         {
-            char text = e.KeyChar;
-            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar) || text == '-');
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar) || e.KeyChar == ' ');
         }
     }
 }

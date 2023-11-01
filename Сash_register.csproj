@@ -65,11 +65,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddElement.cs">
+    <Compile Include="AddDish.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddElement.Designer.cs">
-      <DependentUpon>AddElement.cs</DependentUpon>
+    <Compile Include="AddDish.Designer.cs">
+      <DependentUpon>AddDish.cs</DependentUpon>
     </Compile>
     <Compile Include="CashRegister.cs" />
     <Compile Include="home.cs">
@@ -104,8 +104,8 @@
     <Compile Include="Welcome.Designer.cs">
       <DependentUpon>Welcome.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddElement.resx">
-      <DependentUpon>AddElement.cs</DependentUpon>
+    <EmbeddedResource Include="AddDish.resx">
+      <DependentUpon>AddDish.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="home.resx">
       <DependentUpon>home.cs</DependentUpon>

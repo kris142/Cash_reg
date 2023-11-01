@@ -1,6 +1,6 @@
 ﻿namespace Сash_register
 {
-    partial class AddElement
+    partial class AddDish
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddElement));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddDish));
             this.ItemsList = new System.Windows.Forms.ListView();
             this.name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.des = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -90,7 +90,7 @@
             this.button_remove.TabIndex = 20;
             this.button_remove.Text = "Удалить";
             this.button_remove.UseVisualStyleBackColor = true;
-            this.button_remove.Click += new System.EventHandler(this.button_remove_Click);
+            this.button_remove.Click += new System.EventHandler(this.AddDish_remove_Click);
             // 
             // nametextbox
             // 
@@ -98,7 +98,7 @@
             this.namebox.Name = "nametextbox";
             this.namebox.Size = new System.Drawing.Size(100, 20);
             this.namebox.TabIndex = 13;
-            this.namebox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nametextbox_KeyPress);
+            this.namebox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Text_KeyPress);
             // 
             // button_add
             // 
@@ -120,7 +120,7 @@
             this.price.Name = "pricebox";
             this.price.Size = new System.Drawing.Size(100, 20);
             this.price.TabIndex = 15;
-            this.price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_KeyPress);
+            this.price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Num_KeyPress);
             // 
             // label2
             // 
@@ -167,7 +167,7 @@
             this.button1.TabIndex = 23;
             this.button1.Text = "Назад";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.back_Click);
             // 
             // weightbox
             // 
@@ -176,7 +176,7 @@
             this.weight.Name = "weightbox";
             this.weight.Size = new System.Drawing.Size(100, 20);
             this.weight.TabIndex = 24;
-            this.weight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_KeyPress);
+            this.weight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Num_KeyPress);
             // 
             // label1
             // 
@@ -197,7 +197,7 @@
             this.descriptext.Name = "descriptextbox";
             this.descriptext.Size = new System.Drawing.Size(100, 20);
             this.descriptext.TabIndex = 14;
-            this.descriptext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nametextbox_KeyPress);
+            this.descriptext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Text_KeyPress);
             // 
             // AddElement
             // 
@@ -226,7 +226,7 @@
             this.MinimumSize = new System.Drawing.Size(816, 505);
             this.Name = "AddElement";
             this.Text = "Добавить Блюдо";
-            this.Load += new System.EventHandler(this.AddElement_Load);
+            this.Load += new System.EventHandler(this.AddDish_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

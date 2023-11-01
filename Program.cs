@@ -13,7 +13,7 @@ namespace Сash_register
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Welcome());
+            Application.Run(new AddDish());
         }
     }
     internal class Acc
