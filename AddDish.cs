@@ -62,9 +62,12 @@ namespace Сash_register
 
         private void AddDish_remove_Click(object sender, EventArgs e)
         {
-            string selectedText = this.ItemsList.SelectedItems[0].Text;
-            CashRegister.removeDish(selectedText);
-            this.ItemsList.Items.Remove(this.ItemsList.SelectedItems[0]);
+            if (ItemsList.SelectedItems.Count > 0)
+            {
+                string selectedText = this.ItemsList.SelectedItems[0].Text;
+                CashRegister.removeDish(selectedText);
+                this.ItemsList.Items.Remove(this.ItemsList.SelectedItems[0]);
+            }
         }
         private void Num_KeyPress(object sender, KeyPressEventArgs e)
         {

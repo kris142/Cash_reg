@@ -15,12 +15,10 @@ namespace Сash_register
         private static string[] description = File.ReadAllLines(@"C:\app\data\description.txt");
         private static string[] price = File.ReadAllLines(@"C:\app\data\price.txt");
         private static string[] weight = File.ReadAllLines(@"C:\app\data\weight.txt");
-        private static int sum = 0;
         public static string[] name_get() => CashRegister.name;
         public static string[] description_get() => CashRegister.description;
         public static string[] price_get() => CashRegister.price;
         public static string[] weight_get() => CashRegister.weight;
-        private static ArrayList shopping_basket = new ArrayList();
         public static void addElem(string name, string description, string price, string weight)
         {
             string path = @"C:\app\data\";
@@ -66,8 +64,9 @@ namespace Сash_register
                 File.WriteAllLines(Path.Combine(path, "price.txt"), CashRegister.price);
                 File.WriteAllLines(Path.Combine(path, "weight.txt"), CashRegister.weight);
             }
-
         }
+        private static int sum = 0;
+        private static ArrayList shopping_basket = new ArrayList();
         public static void shopping_basket_add(int quantity) => CashRegister.shopping_basket.Add(quantity.ToString());
         public static void shopping_basket_clear() => CashRegister.shopping_basket.Clear();
         public static void sum_add(int value) => CashRegister.sum += value;

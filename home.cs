@@ -85,14 +85,21 @@ namespace Сash_register
 
         private void product_list_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedProduct = this.product_list.SelectedItem.ToString();
-            int index = product_list.SelectedIndices[0];
-
-            if (index >= 0)
+            if (product_list.SelectedItem != null)
             {
-                this.name.Text = selectedProduct;
-                this.price.Text = CashRegister.price_get()[index];
-                quantity1.Value = 1;
+                string selectedProduct = product_list.SelectedItem.ToString();
+
+                if (product_list.SelectedIndices.Count > 0)
+                {
+                    int index = product_list.SelectedIndices[0];
+
+                    if (index >= 0)
+                    {
+                        this.name.Text = selectedProduct;
+                        this.price.Text = CashRegister.price_get()[index];
+                        quantity1.Value = 1;
+                    }                  
+                }              
             }
         }
 
