@@ -98,8 +98,8 @@ namespace Сash_register
                         this.name.Text = selectedProduct;
                         this.price.Text = CashRegister.price_get()[index];
                         quantity1.Value = 1;
-                    }                  
-                }              
+                    }
+                }
             }
         }
 
@@ -107,7 +107,7 @@ namespace Сash_register
         {
             if (product_list.SelectedItem == null)
             {
-                MessageBox.Show("Error");
+                MessageBox.Show("Ошибка");
             }
             else
             {
@@ -128,7 +128,7 @@ namespace Сash_register
 
                     item.SubItems[2].Text = newQuantity.ToString();
                     item.SubItems[3].Text = newAmount.ToString();
-                    File.AppendAllText("C:\\app\\logi.txt", $"В {currentTime} {Acc.name} добавил {CashRegister.name_get()[index]} - {quantity} шт" + Environment.NewLine);
+                    File.AppendAllText("C:\\app\\logi.txt", $"В {currentTime} {Acc.name} добавил {CashRegister.name_get()[index]} - {quantity} шт" + "\n");
                 }
                 else
                 {
@@ -141,7 +141,7 @@ namespace Сash_register
                     ListViewItem item = new ListViewItem(itemText);
                     item.Name = CashRegister.name_get()[index];
                     this.shopping_basket.Items.Add(item);
-                    File.AppendAllText("C:\\app\\logi.txt", $"В {currentTime} {Acc.name} добавил {CashRegister.name_get()[index]} - {quantity} шт" + Environment.NewLine);
+                    File.AppendAllText("C:\\app\\logi.txt", $"В {currentTime} {Acc.name} добавил {CashRegister.name_get()[index]} - {quantity} шт" + "\n");
                 }
                 int currentSum = int.Parse(this.sum.Text);
                 this.sum.Text = (currentSum + int.Parse(this.quantity1.Text) * int.Parse(this.price.Text)).ToString();
@@ -156,54 +156,62 @@ namespace Сash_register
 
         private void removeselected_Click(object sender, EventArgs e)
         {
-            int indexs = CashRegister.name_get().ToList().IndexOf(product_list.SelectedItem.ToString());
-            DateTime currentTime = DateTime.Now;
-            if (product_list.SelectedItem == null || product_list.SelectedItem.ToString() == "0")
+            try
             {
-                MessageBox.Show("Error");
-            }
-            else if (indexs >= 0 && indexs < CashRegister.name_get().Count())
-            {
-                if (shopping_basket.SelectedItems.Count > 0)
+                int indexs = CashRegister.name_get().ToList().IndexOf(product_list.SelectedItem.ToString());
+                DateTime currentTime = DateTime.Now;
+                if (product_list.SelectedItem == null || product_list.SelectedItem.ToString() == "0")
                 {
-                    string selectedItem = shopping_basket.SelectedItems[0].Text;
-                    int index = CashRegister.name_get().ToList().IndexOf(selectedItem);
-
-                    if (index >= 0 && shopping_basket.Items.ContainsKey(CashRegister.name_get()[index]))
+                    MessageBox.Show("Error");
+                }
+                else if (indexs >= 0 && indexs < CashRegister.name_get().Count())
+                {
+                    if (shopping_basket.SelectedItems.Count > 0)
                     {
-                        int quantity = 1;
-                        ListViewItem item = shopping_basket.Items[CashRegister.name_get()[index]];
-                        int oldQuantity = int.Parse(item.SubItems[2].Text);
-                        int oldAmount = int.Parse(item.SubItems[3].Text);
-                        int pricing = oldAmount / oldQuantity;
+                        string selectedItem = shopping_basket.SelectedItems[0].Text;
+                        int index = CashRegister.name_get().ToList().IndexOf(selectedItem);
 
-                        if (oldQuantity > 1)
+                        if (index >= 0 && shopping_basket.Items.ContainsKey(CashRegister.name_get()[index]))
                         {
-                            int newQuantity = oldQuantity - quantity;
-                            int newAmount = oldAmount - pricing;
-                            item.SubItems[2].Text = newQuantity.ToString();
-                            item.SubItems[3].Text = newAmount.ToString();
-                            int currentSum = int.Parse(this.sum.Text);
-                            this.sum.Text = (currentSum - pricing).ToString();
-                            File.AppendAllText("C:\\app\\logi.txt", $"В {currentTime} {Acc.name} удалил из корзины {CashRegister.name_get()[index]} - {quantity} шт" + Environment.NewLine);
+                            int quantity = 1;
+                            ListViewItem item = shopping_basket.Items[CashRegister.name_get()[index]];
+                            int oldQuantity = int.Parse(item.SubItems[2].Text);
+                            int oldAmount = int.Parse(item.SubItems[3].Text);
+                            int pricing = oldAmount / oldQuantity;
+
+                            if (oldQuantity > 1)
+                            {
+                                int newQuantity = oldQuantity - quantity;
+                                int newAmount = oldAmount - pricing;
+                                item.SubItems[2].Text = newQuantity.ToString();
+                                item.SubItems[3].Text = newAmount.ToString();
+                                int currentSum = int.Parse(this.sum.Text);
+                                this.sum.Text = (currentSum - pricing).ToString();
+                                File.AppendAllText("C:\\app\\logi.txt", $"В {currentTime} {Acc.name} удалил из корзины {CashRegister.name_get()[index]} - {quantity} шт" + "\n");
+                            }
+                            else
+                            {
+                                shopping_basket.Items.Remove(item);
+                                int currentSum = int.Parse(this.sum.Text);
+                                this.sum.Text = (currentSum - pricing).ToString();
+                            }
                         }
                         else
                         {
-                            shopping_basket.Items.Remove(item);
-                            int currentSum = int.Parse(this.sum.Text);
-                            this.sum.Text = (currentSum - pricing).ToString();
+                            MessageBox.Show("Товар не найден");
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Товар не найден");
+                        MessageBox.Show("Выберите элемент в корзине для удаления.");
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Выберите элемент в корзине для удаления.");
-                }
             }
+            catch
+            {
+                MessageBox.Show("Error");
+            }
+
         }
 
         private void export_button_Click(object sender, EventArgs e)
@@ -214,23 +222,27 @@ namespace Сash_register
             {
                 if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-
                     using (StreamWriter streamWriter = new StreamWriter(saveFileDialog1.FileName))
                     {
-                        foreach (object obj in shopping_basket.Items)
+                        foreach (ListViewItem item in shopping_basket.Items)
                         {
-                            streamWriter.WriteLine(obj.ToString());
+                            string line = item.SubItems[0].Text + " " + item.SubItems[1].Text + " руб." + item.SubItems[2].Text + " шт. =" + item.SubItems[3] + " руб ";
+                            streamWriter.WriteLine($"В {currentTime} {Acc.name} сделал экспорт");
+                            streamWriter.WriteLine(line);
                         }
 
                         streamWriter.WriteLine("Итого " + sum.Text);
+
                         CashRegister.shopping_basket_clear();
                         shopping_basket.Items.Clear();
                         sum.Text = "0";
-                        File.AppendAllText("C:\\app\\logi.txt", $"В {currentTime} {Acc.name} сделал экспорт" + Environment.NewLine);
+
+                        File.AppendAllText("C:\\app\\logi.txt", $"В {currentTime} {Acc.name} сделал экспорт" + "\n");
                     }
                 }
-                else { }
             }
+
+
 
         }
 

@@ -273,11 +273,12 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(0, 745);
+            this.richTextBox1.Location = new System.Drawing.Point(879, 0);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(16, 17);
             this.richTextBox1.TabIndex = 44;
             this.richTextBox1.Text = "";
+            this.richTextBox1.Visible = false;
             // 
             // Menu_bas
             // 
