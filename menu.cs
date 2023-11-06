@@ -29,7 +29,6 @@ namespace Сash_register
                     CashRegister.price_get()[i]
                 }));
             }
-
         }
 
         private void Назад_Click(object sender, EventArgs e)
