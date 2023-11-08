@@ -59,7 +59,7 @@ namespace Сash_register
             home.Show();
             Close();
         }
-
+        
         private void AddDish_remove_Click(object sender, EventArgs e)
         {
             if (ItemsList.SelectedItems.Count > 0)
