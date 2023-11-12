@@ -226,22 +226,24 @@ namespace Сash_register
                     {
                         foreach (ListViewItem item in shopping_basket.Items)
                         {
-                            string line = item.SubItems[0].Text + " " + item.SubItems[1].Text + " руб." + item.SubItems[2].Text + " шт. =" + item.SubItems[3] + " руб ";
+                            string line = $"{item.SubItems[0].Text} {item.SubItems[1].Text} руб. {item.SubItems[2].Text} шт. = {item.SubItems[3].Text} руб ";
                             streamWriter.WriteLine($"В {currentTime} {Acc.name} сделал экспорт");
                             streamWriter.WriteLine(line);
                         }
 
-                        streamWriter.WriteLine("Итого " + sum.Text);
+                        streamWriter.WriteLine($"Итого {sum.Text}");
 
                         CashRegister.shopping_basket_clear();
                         shopping_basket.Items.Clear();
                         sum.Text = "0";
 
-                        File.AppendAllText("C:\\app\\logi.txt", $"В {currentTime} {Acc.name} сделал экспорт" + "\n");
+                        File.AppendAllText("C:\\app\\logi.txt", $"В {currentTime} {Acc.name} сделал экспорт" + Environment.NewLine);
                     }
                 }
             }
+            else { MessageBox.Show("Корзина пуста, добавьте элемент"); }
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
