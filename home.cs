@@ -107,7 +107,7 @@ namespace Сash_register
         {
             if (product_list.SelectedItem == null)
             {
-                MessageBox.Show("Ошибка");
+                MessageBox.Show("Выберете блюдо");
             }
             else
             {
