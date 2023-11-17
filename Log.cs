@@ -23,7 +23,7 @@ namespace Сash_register
         {
             string[] login = File.ReadAllLines(@"C:\app\log.txt");
             string[] password = File.ReadAllLines(@"C:\app\pass.txt");
-            string[] user_name = File.ReadAllLines(@"C:\app\user_name.txt");
+            string[] user_name = File.ReadAllLines(@"C:\app\user.txt");
             DateTime currentTime = DateTime.Now;
 
             if (login_.Text.Length < 2 || password_.Text.Length < 2)
