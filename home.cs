@@ -13,9 +13,29 @@ namespace Сash_register
         public home()
         {
             InitializeComponent();
+            InitializeFiles();
             Load += new EventHandler(Loadh);
         }
+        public static void InitializeFiles()
+        {
+            // Check if files exist, create them if not
+            EnsureFileExists(GlobalPath.LogFilePath);
+            EnsureFileExists(GlobalPath.PasswordFilePath);
+            EnsureFileExists(GlobalPath.UserFilePath);
+            EnsureFileExists(GlobalPath.NameFilePath);
+            EnsureFileExists(GlobalPath.DescriptionFilePath);
+            EnsureFileExists(GlobalPath.PriceFilePath);
+            EnsureFileExists(GlobalPath.WeightFilePath);
+            EnsureFileExists(GlobalPath.LogiFilePath);
+        }
 
+        private static void EnsureFileExists(string filePath)
+        {
+            if (!File.Exists(filePath))
+            {
+                File.Create(filePath).Close();
+            }
+        }
         private void сброситьАвторизациюToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Acc.access = "none";
