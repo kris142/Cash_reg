@@ -21,9 +21,9 @@ namespace Сash_register
 
         private void Enter_cl(object sender, EventArgs e)
         {
-            string[] login = File.ReadAllLines(@"C:\app\log.txt");
-            string[] password = File.ReadAllLines(@"C:\app\pass.txt");
-            string[] user_name = File.ReadAllLines(@"C:\app\user.txt");
+            string[] login = File.ReadAllLines(GlobalPath.LogFilePath);
+            string[] password = File.ReadAllLines(GlobalPath.PasswordFilePath);
+            string[] user_name = File.ReadAllLines(GlobalPath.UserFilePath);
             DateTime currentTime = DateTime.Now;
 
             if (login_.Text.Length < 2 || password_.Text.Length < 2)

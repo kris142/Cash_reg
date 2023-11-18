@@ -128,7 +128,7 @@ namespace Сash_register
 
                     item.SubItems[2].Text = newQuantity.ToString();
                     item.SubItems[3].Text = newAmount.ToString();
-                    File.AppendAllText("C:\\app\\logi.txt", $"В {currentTime} {Acc.name} добавил {CashRegister.name_get()[index]} - {quantity} шт" + "\n");
+                    File.AppendAllText(GlobalPath.LogiFilePath, $"В {currentTime} {Acc.name} добавил {CashRegister.name_get()[index]} - {quantity} шт" + "\n");
                 }
                 else
                 {
@@ -141,7 +141,7 @@ namespace Сash_register
                     ListViewItem item = new ListViewItem(itemText);
                     item.Name = CashRegister.name_get()[index];
                     this.shopping_basket.Items.Add(item);
-                    File.AppendAllText("C:\\app\\logi.txt", $"В {currentTime} {Acc.name} добавил {CashRegister.name_get()[index]} - {quantity} шт" + "\n");
+                    File.AppendAllText(GlobalPath.LogiFilePath, $"В {currentTime} {Acc.name} добавил {CashRegister.name_get()[index]} - {quantity} шт" + "\n");
                 }
                 int currentSum = int.Parse(this.sum.Text);
                 this.sum.Text = (currentSum + int.Parse(this.quantity1.Text) * int.Parse(this.price.Text)).ToString();
@@ -187,7 +187,7 @@ namespace Сash_register
                                 item.SubItems[3].Text = newAmount.ToString();
                                 int currentSum = int.Parse(this.sum.Text);
                                 this.sum.Text = (currentSum - pricing).ToString();
-                                File.AppendAllText("C:\\app\\logi.txt", $"В {currentTime} {Acc.name} удалил из корзины {CashRegister.name_get()[index]} - {quantity} шт" + "\n");
+                                File.AppendAllText(GlobalPath.LogiFilePath, $"В {currentTime} {Acc.name} удалил из корзины {CashRegister.name_get()[index]} - {quantity} шт" + "\n");
                             }
                             else
                             {
@@ -237,7 +237,7 @@ namespace Сash_register
                         shopping_basket.Items.Clear();
                         sum.Text = "0";
 
-                        File.AppendAllText("C:\\app\\logi.txt", $"В {currentTime} {Acc.name} сделал экспорт" + Environment.NewLine);
+                        File.AppendAllText(GlobalPath.LogiFilePath, $"В {currentTime} {Acc.name} сделал экспорт" + Environment.NewLine);
                     }
                 }
             }

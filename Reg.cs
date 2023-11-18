@@ -31,19 +31,16 @@ namespace Сash_register
             }
             else
             {
-                string[] login = File.ReadAllLines(@"C:\app\log.txt");
+                string[] login = File.ReadAllLines(GlobalPath.LogFilePath);
                 if (login.Contains(log.Text))
                 {
                     MessageBox.Show("Логин уже занят");
                 }
                 else if (pass1.Text == pass2.Text)
                 {
-                    string l = @"C:\app\log.txt";
-                    string p = @"C:\app\pass.txt";
-                    string u = @"C:\app\user.txt";
-                    File.AppendAllText(l, (log.Text + "\n"));
-                    File.AppendAllText(p, (pass1.Text + "\n"));
-                    File.AppendAllText(u, (user_name.Text + "\n"));
+                    File.AppendAllText(GlobalPath.LogFilePath, (log.Text + "\n"));
+                    File.AppendAllText(GlobalPath.PasswordFilePath, (pass1.Text + "\n"));
+                    File.AppendAllText(GlobalPath.UserFilePath, (user_name.Text + "\n"));
                     MessageBox.Show("Регистрация успешна");
                     this.Close();
                     home.Show();

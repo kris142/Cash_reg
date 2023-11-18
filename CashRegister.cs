@@ -6,25 +6,41 @@ using System.Linq;
 
 namespace Сash_register
 {
+    public class GlobalPath
+    {
+        public static string LogFilePath = @"log.txt";
+        public static string PasswordFilePath = @"pass.txt";
+        public static string UserFilePath = @"user.txt";
+
+        public static string NameFilePath = @"data\name.txt";
+        public static string DescriptionFilePath = @"data\description.txt";
+        public static string PriceFilePath = @"data\price.txt";
+        public static string WeightFilePath = @"data\weight.txt";
+
+        public static string LogiFilePath = @"logi.txt";
+    }
+
     internal class CashRegister
     {
-        private static string[] name = File.ReadAllLines(@"C:\app\data\name.txt");
-        private static string[] description = File.ReadAllLines(@"C:\app\data\description.txt");
-        private static string[] price = File.ReadAllLines(@"C:\app\data\price.txt");
-        private static string[] weight = File.ReadAllLines(@"C:\app\data\weight.txt");
+        private static string[] name = File.ReadAllLines(GlobalPath.NameFilePath);
+        private static string[] description = File.ReadAllLines(GlobalPath.DescriptionFilePath);
+        private static string[] price = File.ReadAllLines(GlobalPath.PriceFilePath);
+        private static string[] weight = File.ReadAllLines(GlobalPath.WeightFilePath);
+
         public static string[] name_get() => CashRegister.name;
         public static string[] description_get() => CashRegister.description;
         public static string[] price_get() => CashRegister.price;
         public static string[] weight_get() => CashRegister.weight;
         public static void addElem(string name, string description, string price, string weight)
         {
-            string path = @"C:\app\data\";
-            string[] fileNames = { "name.txt", "description.txt", "price.txt", "weight.txt" };
+            string[] fileNames = { GlobalPath.NameFilePath, GlobalPath.DescriptionFilePath, GlobalPath.PriceFilePath, GlobalPath.WeightFilePath };
             string[] dataToWrite = { name, description, price, weight };
+
             for (int i = 0; i < fileNames.Length; i++)
             {
-                string dataFilePath = Path.Combine(path, fileNames[i]);
-                File.AppendAllText(dataFilePath, dataToWrite[i] + Environment.NewLine);
+                string dataFilePath = fileNames[i];
+                File.AppendAllText(dataFilePath, $"{dataToWrite[i]}{Environment.NewLine}");
+
                 switch (i)
                 {
                     case 0: CashRegister.name = File.ReadAllLines(dataFilePath); break;
@@ -34,9 +50,9 @@ namespace Сash_register
                 }
             }
         }
+
         public static void removeDish(string name)
         {
-            string path = @"C:\app\data\";
             string nameToRemove = name;
             int index = Array.IndexOf(CashRegister.name, nameToRemove);
             if (index >= 0)
@@ -56,10 +72,10 @@ namespace Сash_register
                 CashRegister.price = priceList.ToArray();
                 CashRegister.weight = weightList.ToArray();
 
-                File.WriteAllLines(Path.Combine(path, "name.txt"), CashRegister.name);
-                File.WriteAllLines(Path.Combine(path, "description.txt"), CashRegister.description);
-                File.WriteAllLines(Path.Combine(path, "price.txt"), CashRegister.price);
-                File.WriteAllLines(Path.Combine(path, "weight.txt"), CashRegister.weight);
+                File.WriteAllLines(GlobalPath.NameFilePath, CashRegister.name);
+                File.WriteAllLines(GlobalPath.DescriptionFilePath, CashRegister.description);
+                File.WriteAllLines(GlobalPath.PriceFilePath, CashRegister.price);
+                File.WriteAllLines(GlobalPath.WeightFilePath, CashRegister.weight);
             }
         }
         private static int sum = 0;
