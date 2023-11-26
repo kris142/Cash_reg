@@ -7,9 +7,9 @@ using System.Runtime.InteropServices;
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанных со сборкой.
 [assembly: AssemblyTitle("Сash_register")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Проект Кристиана")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("KS_54")]
 [assembly: AssemblyProduct("Сash_register")]
 [assembly: AssemblyCopyright("Copyright ©  2023")]
 [assembly: AssemblyTrademark("")]
