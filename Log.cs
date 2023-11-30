@@ -67,7 +67,7 @@ namespace Сash_register
                 }
                 if (loggedIn)
                 {
-                    File.AppendAllText(@"C:\app\logi.txt", $"В {currentTime} {Acc.name} вошел в систему" + Environment.NewLine);
+                    File.AppendAllText(GlobalPath.LogiFilePath, $"В {currentTime} {Acc.name} вошел в систему" + Environment.NewLine);
                 }
             }
         }

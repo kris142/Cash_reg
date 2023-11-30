@@ -33,23 +33,18 @@ namespace Сash_register
         public static string[] weight_get() => CashRegister.weight;
         public static void addElem(string name, string description, string price, string weight)
         {
-            string[] fileNames = { GlobalPath.NameFilePath, GlobalPath.DescriptionFilePath, GlobalPath.PriceFilePath, GlobalPath.WeightFilePath };
-            string[] dataToWrite = { name, description, price, weight };
-
-            for (int i = 0; i < fileNames.Length; i++)
-            {
-                string dataFilePath = fileNames[i];
-                File.AppendAllText(dataFilePath, $"{dataToWrite[i]}{Environment.NewLine}");
-
-                switch (i)
-                {
-                    case 0: CashRegister.name = File.ReadAllLines(dataFilePath); break;
-                    case 1: CashRegister.description = File.ReadAllLines(dataFilePath); break;
-                    case 2: CashRegister.price = File.ReadAllLines(dataFilePath); break;
-                    case 3: CashRegister.weight = File.ReadAllLines(dataFilePath); break;
-                }
-            }
+            UpdateFile(GlobalPath.NameFilePath, name, ref CashRegister.name);
+            UpdateFile(GlobalPath.DescriptionFilePath, description, ref CashRegister.description);
+            UpdateFile(GlobalPath.PriceFilePath, price, ref CashRegister.price);
+            UpdateFile(GlobalPath.WeightFilePath, weight, ref CashRegister.weight);
         }
+
+        private static void UpdateFile(string filePath, string dataToWrite, ref string[] targetArray)
+        {
+            File.AppendAllText(filePath, $"{dataToWrite}{Environment.NewLine}");
+            targetArray = File.ReadAllLines(filePath);
+        }
+
 
         public static void removeDish(string name)
         {
