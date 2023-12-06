@@ -33,7 +33,11 @@ namespace Сash_register
         }
         private void button_add_Click(object sender, EventArgs e)
         {
-            if (descriptext.Text != "" && weight.Text != "" && price.Text != "" && namebox.Text != "" && !CashRegister.name_get().Contains(this.namebox.Text))
+            if (descriptext.Text != "" 
+                && weight.Text != "" 
+                && price.Text != "" 
+                && namebox.Text != "" 
+                && !CashRegister.name_get().Contains(this.namebox.Text))
             {
                 DateTime currentTime = DateTime.Now;
                 ListViewItem listViewItem = new ListViewItem(this.namebox.Text);
@@ -42,7 +46,8 @@ namespace Сash_register
                 listViewItem.SubItems.Add(this.price.Text);
                 this.ItemsList.Items.Add(listViewItem);
                 CashRegister.addElem(this.namebox.Text, this.descriptext.Text, this.weight.Text, this.price.Text);
-                File.AppendAllText(GlobalPath.LogiFilePath, $"В {currentTime} {Acc.name} добавил {this.namebox.Text}" + Environment.NewLine);
+                File.AppendAllText
+                (GlobalPath.LogiFilePath, $"В {currentTime} {Acc.name} добавил {this.namebox.Text}" + Environment.NewLine);
                 descriptext.Text = weight.Text = price.Text = namebox.Text = "";
             }
             else
