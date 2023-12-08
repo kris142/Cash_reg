@@ -45,6 +45,9 @@
             this.weight = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.descriptext = new System.Windows.Forms.TextBox();
+            this.button_edit = new System.Windows.Forms.Button();
+            this.button_save = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // ItemsList
@@ -84,18 +87,18 @@
             // 
             this.button_remove.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button_remove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_remove.Location = new System.Drawing.Point(560, 333);
+            this.button_remove.Location = new System.Drawing.Point(519, 284);
             this.button_remove.Name = "button_remove";
-            this.button_remove.Size = new System.Drawing.Size(100, 40);
+            this.button_remove.Size = new System.Drawing.Size(206, 40);
             this.button_remove.TabIndex = 20;
             this.button_remove.Text = "Удалить";
             this.button_remove.UseVisualStyleBackColor = true;
             this.button_remove.Click += new System.EventHandler(this.AddDish_remove_Click);
             // 
-            // nametextbox
+            // namebox
             // 
             this.namebox.Location = new System.Drawing.Point(557, 48);
-            this.namebox.Name = "nametextbox";
+            this.namebox.Name = "namebox";
             this.namebox.Size = new System.Drawing.Size(100, 20);
             this.namebox.TabIndex = 13;
             this.namebox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Text_KeyPress);
@@ -105,7 +108,7 @@
             this.button_add.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button_add.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button_add.Location = new System.Drawing.Point(515, 265);
+            this.button_add.Location = new System.Drawing.Point(519, 238);
             this.button_add.Name = "button_add";
             this.button_add.Size = new System.Drawing.Size(206, 40);
             this.button_add.TabIndex = 19;
@@ -113,11 +116,11 @@
             this.button_add.UseVisualStyleBackColor = true;
             this.button_add.Click += new System.EventHandler(this.button_add_Click);
             // 
-            // pricebox
+            // price
             // 
             this.price.Location = new System.Drawing.Point(560, 138);
             this.price.MaxLength = 10;
-            this.price.Name = "pricebox";
+            this.price.Name = "price";
             this.price.Size = new System.Drawing.Size(100, 20);
             this.price.TabIndex = 15;
             this.price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Num_KeyPress);
@@ -169,11 +172,11 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.back_Click);
             // 
-            // weightbox
+            // weight
             // 
             this.weight.Location = new System.Drawing.Point(560, 186);
             this.weight.MaxLength = 10;
-            this.weight.Name = "weightbox";
+            this.weight.Name = "weight";
             this.weight.Size = new System.Drawing.Size(100, 20);
             this.weight.TabIndex = 24;
             this.weight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Num_KeyPress);
@@ -190,16 +193,47 @@
             this.label1.TabIndex = 25;
             this.label1.Text = "Вес";
             // 
-            // descriptextbox
+            // descriptext
             // 
             this.descriptext.Location = new System.Drawing.Point(558, 91);
             this.descriptext.Multiline = true;
-            this.descriptext.Name = "descriptextbox";
+            this.descriptext.Name = "descriptext";
             this.descriptext.Size = new System.Drawing.Size(100, 20);
             this.descriptext.TabIndex = 14;
             this.descriptext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Text_KeyPress);
             // 
-            // AddElement
+            // button_edit
+            // 
+            this.button_edit.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_edit.Location = new System.Drawing.Point(519, 330);
+            this.button_edit.Name = "button_edit";
+            this.button_edit.Size = new System.Drawing.Size(130, 40);
+            this.button_edit.TabIndex = 26;
+            this.button_edit.Text = "Редактировать";
+            this.button_edit.UseVisualStyleBackColor = true;
+            this.button_edit.Click += new System.EventHandler(this.button_edit_Click);
+            // 
+            // button_save
+            // 
+            this.button_save.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_save.Location = new System.Drawing.Point(655, 330);
+            this.button_save.Name = "button_save";
+            this.button_save.Size = new System.Drawing.Size(70, 40);
+            this.button_save.TabIndex = 27;
+            this.button_save.Text = "Готово";
+            this.button_save.UseVisualStyleBackColor = true;
+            this.button_save.Click += new System.EventHandler(this.button_save_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(519, 230);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(206, 94);
+            this.panel1.TabIndex = 28;
+            // 
+            // AddDish
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -207,6 +241,9 @@
             this.BackgroundImage = global::Сash_register.Properties.Resources.rm222batch5_mind_12;
             this.ClientSize = new System.Drawing.Size(800, 466);
             this.ControlBox = false;
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.button_save);
+            this.Controls.Add(this.button_edit);
             this.Controls.Add(this.weight);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
@@ -224,7 +261,7 @@
             this.MaximumSize = new System.Drawing.Size(816, 505);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(816, 505);
-            this.Name = "AddElement";
+            this.Name = "AddDish";
             this.Text = "Добавить Блюдо";
             this.Load += new System.EventHandler(this.AddDish_Load);
             this.ResumeLayout(false);
@@ -249,5 +286,8 @@
         private System.Windows.Forms.ColumnHeader weightf;
         private System.Windows.Forms.ColumnHeader pr;
         private System.Windows.Forms.TextBox descriptext;
+        private System.Windows.Forms.Button button_edit;
+        private System.Windows.Forms.Button button_save;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -30,13 +30,15 @@ namespace Сash_register
                     CashRegister.price_get()[i]
                 }));
             }
+            panel1.Visible = false;
+            button_save.Enabled = false;
         }
         private void button_add_Click(object sender, EventArgs e)
         {
-            if (descriptext.Text != "" 
-                && weight.Text != "" 
-                && price.Text != "" 
-                && namebox.Text != "" 
+            if (descriptext.Text != ""
+                && weight.Text != ""
+                && price.Text != ""
+                && namebox.Text != ""
                 && !CashRegister.name_get().Contains(this.namebox.Text))
             {
                 DateTime currentTime = DateTime.Now;
@@ -63,7 +65,7 @@ namespace Сash_register
             home.Show();
             Close();
         }
-        
+
         private void AddDish_remove_Click(object sender, EventArgs e)
         {
             if (ItemsList.SelectedItems.Count > 0)
@@ -82,5 +84,59 @@ namespace Сash_register
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar) || e.KeyChar == ' ');
         }
+
+        private void button_edit_Click(object sender, EventArgs e)
+        {
+            if (ItemsList.SelectedItems.Count > 0)
+            {
+                string selectedText = this.ItemsList.SelectedItems[0].Text;
+
+                int selectedIndex = this.ItemsList.SelectedIndices[0];
+
+                this.namebox.Text = selectedText;
+                this.descriptext.Text = this.ItemsList.SelectedItems[0].SubItems[1].Text;
+                this.weight.Text = this.ItemsList.SelectedItems[0].SubItems[2].Text;
+                this.price.Text = this.ItemsList.SelectedItems[0].SubItems[3].Text;
+                this.button_add.Tag = selectedIndex;
+                panel1.Visible = true;
+                button_save.Enabled = true;
+            }
+
+        }
+
+        private void button_save_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(this.namebox.Text)
+                && !string.IsNullOrEmpty(this.descriptext.Text)
+                && !string.IsNullOrEmpty(this.weight.Text)
+                && !string.IsNullOrEmpty(this.price.Text))
+            {
+                int selectedIndex = (int)this.button_add.Tag;
+
+                ListViewItem selectedItem = this.ItemsList.Items[selectedIndex];
+                selectedItem.Text = this.namebox.Text;
+                selectedItem.SubItems[1].Text = this.descriptext.Text;
+                selectedItem.SubItems[2].Text = this.weight.Text;
+                selectedItem.SubItems[3].Text = this.price.Text;
+
+                CashRegister.removeDish(selectedItem.Text);
+                CashRegister.addElem(selectedItem.Text, this.descriptext.Text, this.weight.Text, this.price.Text);
+
+                DateTime currentTime = DateTime.Now;
+                File.AppendAllText(GlobalPath.LogiFilePath, $"В {currentTime} {Acc.name} отредактировал блюдо {selectedItem.Text}" + Environment.NewLine);
+
+                this.namebox.Text = this.descriptext.Text = this.weight.Text = this.price.Text = "";
+
+                this.button_add.Enabled = true;
+                panel1.Visible = false;
+                button_save.Enabled = false;
+
+            }
+            else
+            {
+                MessageBox.Show("Не все поля заполнены");
+            }
+        }
+
     }
 }

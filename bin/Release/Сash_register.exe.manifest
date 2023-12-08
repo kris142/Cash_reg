@@ -44,14 +44,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Сash_register.exe" size="1071616">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Сash_register.exe" size="1073152">
       <assemblyIdentity name="Сash_register" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>5i4cCFtA7WmBiG0i5wysbqRidf68WAXg7TwckkLzh0w=</dsig:DigestValue>
+        <dsig:DigestValue>Oa4LGrW5toaGY60dozPqxv6X57037gWxb03lVH/la1Y=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

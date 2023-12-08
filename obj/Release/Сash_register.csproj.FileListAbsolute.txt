@@ -60,3 +60,22 @@ C:\Users\krist\OneDrive\Рабочий стол\1\Сash_register\Cash_reg\bin\Re
 C:\Users\krist\OneDrive\Рабочий стол\1\Сash_register\Cash_reg\obj\Release\Сash_register.TrustInfo.xml
 C:\Users\krist\OneDrive\Рабочий стол\1\Сash_register\Cash_reg\obj\Release\Сash_register.exe.manifest
 C:\Users\krist\OneDrive\Рабочий стол\1\Сash_register\Cash_reg\obj\Release\Сash_register.application
+C:\workspace\3\Cash_reg\bin\Release\Сash_register.exe.manifest
+C:\workspace\3\Cash_reg\bin\Release\Сash_register.application
+C:\workspace\3\Cash_reg\bin\Release\Сash_register.exe
+C:\workspace\3\Cash_reg\bin\Release\Сash_register.pdb
+C:\workspace\3\Cash_reg\obj\Release\Сash_register.csproj.AssemblyReference.cache
+C:\workspace\3\Cash_reg\obj\Release\Сash_register.AddDish.resources
+C:\workspace\3\Cash_reg\obj\Release\Сash_register.home.resources
+C:\workspace\3\Cash_reg\obj\Release\Сash_register.Log.resources
+C:\workspace\3\Cash_reg\obj\Release\Сash_register.menu.resources
+C:\workspace\3\Cash_reg\obj\Release\Сash_register.Reg.resources
+C:\workspace\3\Cash_reg\obj\Release\Сash_register.Properties.Resources.resources
+C:\workspace\3\Cash_reg\obj\Release\Сash_register.Welcome.resources
+C:\workspace\3\Cash_reg\obj\Release\Сash_register.csproj.GenerateResource.cache
+C:\workspace\3\Cash_reg\obj\Release\Сash_register.csproj.CoreCompileInputs.cache
+C:\workspace\3\Cash_reg\obj\Release\Сash_register.TrustInfo.xml
+C:\workspace\3\Cash_reg\obj\Release\Сash_register.exe.manifest
+C:\workspace\3\Cash_reg\obj\Release\Сash_register.application
+C:\workspace\3\Cash_reg\obj\Release\Сash_register.exe
+C:\workspace\3\Cash_reg\obj\Release\Сash_register.pdb
